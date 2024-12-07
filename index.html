@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media (max-width : 700px) {
+            
+        body{
+            background-color: black;
+        }
+        p{
+            color: white;
+          writing-mode: vertical-lr; 
+          margin-top: 25%;
+          margin-left: 10%
+          ; 
+          font-size: 350px;
+        }}
+    </style>
+</head>
+<body>
+    <p id="hora"></p>
+
+    <script>
+     var data = new Date()   
+     setInterval(function(){
+     var data = new Date() 
+     var hora = data.getHours()
+     
+     var minuto = data.getMinutes()
+    
+     var segundo = data.getSeconds()
+     if(hora < 10){
+     document.getElementById("hora").innerHTML = 0 + "" + hora +":" + minuto ;    
+     }
+     if( minuto < 10){
+     document.getElementById("hora").innerHTML =  hora +":" + 0 + "" + minuto ;    
+     }
+     if(hora < 10 && minuto < 10 ){
+     document.getElementById("hora").innerHTML = 0 + "" + hora +":" + 0 + "" + minuto ;    
+     }
+     if(hora >= 10 && minuto >= 10 ){
+     document.getElementById("hora").innerHTML =  hora +":" + minuto ;    
+     }
+
+     },1000) 
+
+    </script>
+</body>
+</html>
